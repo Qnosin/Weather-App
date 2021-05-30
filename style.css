@@ -1,0 +1,16 @@
+body,
+html {
+    height: 100vh;
+    background: rgb(221, 193, 47);
+    background: linear-gradient(90deg, rgba(221, 193, 47, 1) 30%, rgba(221, 185, 47, 1) 53%, rgba(221, 172, 47, 1) 63%);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.day1 img,
+.day2 img,
+.day3 img,
+.day4 img,
+.day5 img,
+.day6 img {
+    height: 15vh;
+}
