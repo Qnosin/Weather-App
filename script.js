@@ -46,11 +46,6 @@ async function getItToDom(data) {
         if ((date.getMonth() === 0 || 2 || 4 || 6 || 7 || 9 || 11) && (date.getDate() === 31)) {
             date.setDate(1);
             date.setMonth(date.getMonth())
-        } else if ((date.getMonth() === 1 || 3 || 5 || 8 || 10) && (date.getDate() === 30)) {
-            console.log(date.getMonth())
-            console.log(date.getDate())
-            date.setDate(1);
-            date.setMonth(date.getMonth())
         }
         let newPlace = document.createElement('img')
         let newDesc = document.createElement('p')
@@ -63,22 +58,22 @@ async function getItToDom(data) {
         TempMax.textContent += 'TempMax: ' + Math.floor(data.daily[x].temp.max) + '℃'
         TempMin.textContent += 'TempMin: ' + Math.floor(data.daily[x].temp.min) + '℃'
         if (x == 1) {
-            fullDate = `${date.getDate()}.` + `${date.getMonth() + 2}.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 1}.` + `${date.getMonth() + 1}.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         } else if (x == 2) {
-            fullDate = `${date.getDate() + 1}.` + `${date.getMonth() + 2}.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 2}.` + `${date.getMonth() + 1}.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         } else if (x == 3) {
-            fullDate = `${date.getDate() + 2}.` + `${date.getMonth() + 2 }.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 3}.` + `${date.getMonth() + 1 }.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         } else if (x == 4) {
-            fullDate = `${date.getDate() + 3}.` + `${date.getMonth() +2 }.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 4}.` + `${date.getMonth() + 1}.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         } else if (x == 5) {
-            fullDate = `${date.getDate() + 4}.` + `${date.getMonth() +2 }.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 5}.` + `${date.getMonth() + 1 }.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         } else if (x == 6) {
-            fullDate = `${date.getDate() + 5}.` + `${date.getMonth()+ 2 }.` + `${date.getFullYear()}`
+            fullDate = `${date.getDate() + 6}.` + `${date.getMonth()+ 1}.` + `${date.getFullYear()}`
             newDesc.textContent = data.daily[x].weather[0].description + ' ' + fullDate
         }
         allDays[x].append(newPlace, newDesc, Temp, TempMax, TempMin);
